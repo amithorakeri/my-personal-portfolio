@@ -12,6 +12,32 @@ body {
     background-color: #f4f4f4;
 }
 
+a {
+    color: #e8491d;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    display: inline-block;
+    background: #35424a;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.button:hover {
+    background: #e8491d;
+    text-decoration: none;
+}
+
 /* Header styles */
 header {
     background-color: #35424a;
@@ -27,6 +53,7 @@ header h1 {
 nav ul {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     list-style: none;
 }
 
@@ -66,9 +93,121 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
-/* Project styles */
+h3 {
+    color: #35424a;
+    margin: 1rem 0 0.5rem 0;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* About section */
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+
+.profile-image {
+    flex: 1;
+    min-width: 250px;
+}
+
+.image-placeholder {
+    background-color: #ddd;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #777;
+    border-radius: 5px;
+}
+
+.profile-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* Skills section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 250px;
+}
+
+.skills-list {
+    list-style-position: inside;
+    margin-left: 1rem;
+}
+
+.skills-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Projects section */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
 .project {
-    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 0;
+}
+
+.project-links {
+    margin-top: 1rem;
+}
+
+/* Testimonials section */
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.testimonial {
+    flex: 1;
+    min-width: 250px;
+    padding: 1.5rem;
+    border-left: 4px solid #e8491d;
+    background-color: #f9f9f9;
+}
+
+.quote {
+    font-style: italic;
+    position: relative;
+}
+
+.quote::before {
+    content: """;
+    font-size: 2rem;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    color: #e8491d;
+}
+
+.author {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Contact section */
+.contact-info {
+    margin-top: 1rem;
 }
 
 /* Footer styles */
@@ -78,4 +217,23 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .profile-container,
+    .skills-container,
+    .projects-container,
+    .testimonials-container {
+        flex-direction: column;
+    }
+    
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
 }
